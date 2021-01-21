@@ -8,18 +8,14 @@ class Media extends PureComponent{
         author: 'jonathan gonzalez'
     }
 
+    handleClick = event => {
+        this.props.openModal(this.props);
+    }
+
 
     render(){
-        const style ={
-            container:{
-                color: '#44546b',
-                cursor: 'pointer',
-                width: 260,
-                border: '1px solid red',
-            }
-        }
         return(
-            <div className='Media' onClick={this.props.handleClick}>
+            <div className='Media' onClick={this.handleClick}>
                 <div className='Media-cover'>
                     <img src={this.props.cover} alt='foto' width={260} height={160} className='Media-image'></img>
                     <h3 className='Media-title'>{this.props.title}</h3>
